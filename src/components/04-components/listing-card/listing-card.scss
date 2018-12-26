@@ -1,0 +1,131 @@
+.c-listing-card {
+  display: flex;
+  flex-direction: column;
+  background-color: color('aliceblue');
+  width: 100%;
+  height: 100%; // for sliders
+  transition:$global-transition;
+
+  &.is-over{
+    transition:$global-transition;
+    box-shadow:0 0 32px rgba(color('blackpearl'),.2);
+  }
+
+  &__img-wrap {
+    min-height: 1px; // for ie
+    height: auto;
+    position: relative;
+  }
+  &__img-link {
+    display: block;
+  }
+  &__img {
+
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__wishlist {
+    position: absolute;
+    padding: $unit-large/3;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    color: color('aliceblue');
+    @include attention() {
+      color: color('aliceblue');
+    }
+    .c-svgicon {
+      transition: fill .25s ease-in-out;
+    }
+    &.is-active {
+      .c-svgicon {
+        animation: pulse 1s ease;
+        color: color('brand');
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: $unit-small ($unit/3*2);
+    font-family: $sans-serif;
+    @include mq(tablet) {
+      padding: $unit $unit-medium;
+    }
+  }
+  &__address {
+    margin-bottom: $unit-small*.75;
+    font-size: 0;
+    font-weight: normal;
+    &-link {
+      @include font-size(size('b'), 22px);
+      text-decoration: none;
+      font-family: $font;
+      @include mq(tablet) {
+        @include font-size(size('b'));
+      }
+      @include mq(desktop) {
+        @include font-size(size('l'), 30px);
+      }
+    }
+  }
+  &__features {
+    margin-bottom: $unit-small;
+    font-size: 0;
+  }
+  &__feature {
+    display: inline-block;
+    margin-right: $unit*.75;
+    &-label {
+      @include font-size(size('xs'), 16px);
+      margin-right: $unit-tiny;
+      vertical-align: middle;
+      @include mq(tablet) {
+        @include font-size(size('s'));
+      }
+      @include mq(desktop) {
+        @include font-size(size('xb'));
+      }
+    }
+    .c-svgicon {
+      vertical-align: middle;
+    }
+  }
+  &__footer {
+    margin-top: auto;
+    @include font-size(size('xs'), 18px);
+    @include mq(desktop) {
+      @include font-size(size('base'));
+    }
+  }
+  &__price-guide {
+    color: color('brand');
+  }
+
+  &__tags {
+    position: absolute;
+    top: $unit-small;
+    font-family: $sans-serif;
+    font-size: 0;
+    pointer-events: none;
+  }
+  &__tag {
+    @include font-size(size('xxt'), 1);
+    display: inline-block;
+    margin-right: 1px;
+    padding: $unit-tiny $unit/3;
+    background-color: color('aliceblue');
+
+    &--brand {
+      color: color('white');
+      background-color: color('brand');
+    }
+    @include mq(tablet) {
+      @include font-size(size('base'), 1);
+      padding: $unit/3 $unit-small;
+    }
+
+  }
+}

@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-favourite-alt', viewbox: '0 0 26 23', class: ''}, true %}

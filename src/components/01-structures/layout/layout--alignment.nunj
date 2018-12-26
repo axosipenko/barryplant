@@ -1,0 +1,26 @@
+<div class="o-layout">
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">{{ fillerText }}</div>
+  </div>
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">{{ fillerTextLong }}</div>
+  </div>
+</div>
+
+<div class="o-layout o-layout--middle">
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">{{ fillerText }}</div>
+  </div>
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">{{ fillerTextLong }}</div>
+  </div>
+</div>
+
+<div class="o-layout o-layout--bottom">
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">{{ fillerText }}</div>
+  </div>
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">{{ fillerTextLong }}</div>
+  </div>
+</div>

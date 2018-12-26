@@ -1,0 +1,177 @@
+.c-property-stage {
+  position: relative;
+  margin-bottom: 24px;
+  &__interaction {
+    font-family: 'Shapiro-35FeatherText';
+    padding: 12px;
+    @include mq(largepalm) {
+      display: none;
+    }
+    a {
+      @include font-size(size('xt'), 1.1);
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: middle;
+      .c-svgicon {
+        vertical-align: middle;
+        margin-left: 8px;
+        &--icon-favourite-alt {
+          @include mq($until: desktop) {
+            width: 15px;
+            height: 13px;
+          }
+        }
+        &--icon-print {
+          @include mq($until: desktop) {
+            width: 15px;
+            height: 16px;
+          }
+        }
+        &--icon-share {
+          @include mq($until: desktop) {
+            width: 13px;
+            height: 14px;
+          }
+        }
+      }
+    }
+    &_left,
+    &_right {
+      display: inline-block;
+    }
+    &_right {
+      float: right;
+      a {
+        margin-left: 12px;
+        display: inline-block;
+        vertical-align: middle;
+        @include mq(palm) {
+          margin-left: 18px;
+        }
+      }
+    }
+  }
+  &__slider {
+    position: relative;
+    width: 100%;
+    padding-bottom: 30%;
+    min-height: 300px;
+    background: #333;
+    &_navleft,
+    &_navright {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      svg {
+        width: 12px;
+        height: 12px;
+        @include mq(tablet) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    &_navleft {
+      left: 12px;
+      @include mq(tablet) {
+        left: 24px;
+      }
+    }
+    &_navright {
+      right: 12px;
+      @include mq(tablet) {
+        right: 24px;
+      }
+    }
+    &_expand {
+      display: inline-block;
+      position: absolute;
+      bottom: 24px;
+      right: 12px;
+      padding: 0;
+      width: 23px;
+      height: 23px;
+      display: inline-block;
+      background: rgba(color('content'), .3);
+      @include mq($until: largepalm) {
+        background: transparent;
+      }
+      &:hover {
+        background: color('brand');
+      }
+      svg {
+        width: 23px;
+        height: 23px;
+      }
+      @include mq(tablet) {
+        width: 32px;
+        height: 32px;
+        right: 24px;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+  }
+  &__bottom {
+    // width: 100%;
+    padding: 6px 0 0;
+    text-align: center;
+    @include mq(tablet) {
+      position: absolute;
+      bottom: 21px;
+      left: 24px;
+      right: 62px;
+      text-align: right;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      @include font-size(size('xs'), 1.4);
+      vertical-align: top;
+      margin: 0 6px;
+      &.is-active,
+      &:hover,
+      &:focus {
+        background: color('brand');
+        @include mq($until: tablet) {
+          color: inherit;
+          background: transparent;
+          border-bottom: 1px solid color('brand');
+        }
+      }
+      @include mq($until: largepalm) {
+        &.is-active {
+          background: transparent;
+          border-bottom: 1px solid color('brand');
+        }
+      }
+      @include mq(palm) {
+        @include font-size(size('base'), 1.4);
+      }
+      @include mq(tablet) {
+        color: #FFF;
+        padding: 4px 12px 3px;
+        background: rgba(color('content'), .3);
+        margin: 0 0 3px 0;
+      }
+      @include mq(tablet) {
+        @include font-size(size('b'), 1.4);
+        margin: 0 6px 3px 0;
+      }
+    }
+    &_left {
+      display: none;
+      @include mq(tablet) {
+        display: inline-block;
+        float: left;
+      }
+    }
+    &_right {
+    }
+  }
+  &__expand {
+  }
+}

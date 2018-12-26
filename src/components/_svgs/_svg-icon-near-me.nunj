@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-near-me', viewbox: '0 0 48 48', class: ''}, true %}

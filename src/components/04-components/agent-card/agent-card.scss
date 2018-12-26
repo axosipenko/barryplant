@@ -1,0 +1,33 @@
+.c-agent-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: $sans-serif;
+  text-align: center;
+  @include font-size(size('s'));
+
+  &__img {
+    margin: auto auto $unit-tiny;
+    display: block;
+    height: auto;
+  }
+
+  &__name {
+    @include font-size($base-font-size);
+  }
+
+  &__name,
+  &__job-title {
+    margin: 0;
+  }
+
+  &__phone,
+  &__email,
+  &__link {
+    text-decoration: none;
+  }
+
+  &__link {
+    color: color('brand');
+  }
+}

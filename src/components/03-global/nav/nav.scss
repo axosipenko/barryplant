@@ -1,0 +1,179 @@
+.c-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  list-style: none;
+
+  text-align: center;
+
+  &__item {
+    font-size: 0;
+
+    &::after {
+      @include font-size(size('base'), 1.25);
+
+      content: '|';
+      font-family: $font-regular;
+
+      @include mq(wide) {
+        @include font-size(size('l'), 1.25);
+      }
+    }
+  }
+
+  &__link {
+    @include font-size(size('s'), 1.25);
+
+    display: inline-block;
+
+    color: color('brand');
+    text-decoration: none;
+    font-family: $font-regular;
+
+    @include attention() {
+      color: color('secondary');
+    }
+
+    span {
+      display: none;
+
+      @include mq(largepalm) {
+        display: inline;
+      }
+    }
+
+    @include mq(palm) {
+      @include font-size(size('base'), 1.25);
+    }
+
+    @include mq(tablet) {
+      @include font-size(size('b'), 1.25);
+
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    @include mq(desktop) {
+      @include font-size(size('xxxb'), 1.25);
+      margin: 0 ($unit/3*2);
+    }
+
+    @include mq(wide) {
+      @include font-size(size('xl'), 1.25);
+      margin: 0 $unit-medium;
+    }
+  }
+
+  &__item:last-child {
+    &::after {
+      content: none;
+    }
+  }
+
+  &__item:first-child &__link {
+    margin-left: 0;
+  }
+  &__item:last-child &__link {
+    margin-right: 0;
+  }
+
+  @include mq(tablet) {
+    text-align: center;
+  }
+
+  // a modifier used within the 'mega nav' component.
+  &--mega-nav,
+  &--mega-nav-office {
+    justify-content: space-between;
+  }
+  &--mega-nav &__item,
+  &--mega-nav-office &__item {
+    margin-left: $unit / 3;
+    margin-right: $unit / 3;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // turn off the dividing line
+    &::after {
+      content: none;
+    }
+  }
+  &--mega-nav-office &__item {
+    width: 50%;
+    text-align: left;
+  }
+
+  &--mega-nav &__link,
+  &--mega-nav-office &__link {
+    @include hover-underline($spacing: $unit-tiny);
+    display: block;
+    color: color('white');
+    @include attention() {
+      color: color('white');
+    }
+  }
+
+  &--mega-nav-office &__link {
+    color: color('content');
+    @include attention() {
+      color: color('content');
+    }
+  }
+
+  // The mega nav footer variant
+  &--mega-nav-footer &__item {
+    @include font-size(size('s'));
+
+    flex-basis: 50%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    font-family: $sans-serif;
+    font-weight: $sans-serif-light;
+
+    &:first-child {
+      justify-content: flex-end;
+    }
+    &:last-child {
+      justify-content: flex-start;
+    }
+
+    &::after {
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+    }
+  }
+  &--mega-nav-footer &__link {
+    @include font-size(size('t'));
+
+    margin: 0 $unit * .75;
+
+    font-family: inherit;
+    font-weight: inherit;
+
+    color: color('white');
+
+    @include attention() {
+      color: color('brand');
+    }
+  }
+  
+  // TODO: refactor;
+  &--mega-nav-footer-content &__link {
+    color: color('content');
+    @include attention() {
+      color: color('brand');
+    }
+  }
+}

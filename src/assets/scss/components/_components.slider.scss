@@ -1,0 +1,172 @@
+.c-slider {
+  &__slide {
+    height: auto; // to make it equal height
+    overflow: hidden;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding-top: $unit*1.25;
+  }
+
+  &__nav {
+    font-size: 0;
+  }
+
+  &__prev,
+  &__next {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+    transition: $transition;
+    @extend %unbutton;
+    @include attention() {
+      color: color('brand');
+    }
+    .c-svgicon {
+      width: 28px;
+      height: 12px;
+      @include mq(desktop) {
+        width: 45px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__prev {
+    margin-right: $unit-small*.75;
+    @include mq(desktop) {
+      margin-right: $unit*2/3;
+    }
+  }
+
+  &__next {
+    margin-left: $unit-small*.75;
+    @include mq(desktop) {
+      margin-left: $unit*2/3;
+    }
+  }
+
+  &__dots {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__ctas {
+    margin-left: auto;
+    margin-top: -$unit-tiny/2;
+    @include mq(desktop) {
+      margin-top: -$unit-tiny;
+    }
+  }
+}
+
+.is-three-cols > .c-slider__slide {
+  &:nth-child(n+1) {
+    display: none;
+  }
+
+  &:first-child {
+    display: inline-block;
+  }
+
+  @include mq(largepalm) {
+    &:nth-child(n+1) {
+      display: none;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      display: inline-block;
+    }
+  }
+
+  @include mq(tablet) {
+    &:nth-child(n+3) {
+      display: none;
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: inline-block;
+    }
+  }
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-slide {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  .slick-initialized & {
+    display: block;
+  }
+}
+
+.slick-dots {
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-right: $unit-small*.75;
+    @include mq(desktop) {
+      margin-right: $unit*2/3;
+    }
+    &.slick-active {
+      button:after {
+        background-color: color('content');
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  button {
+    display: block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: 1px solid color('content');
+    border-radius: 20px;
+    @extend %unbutton;
+    @include attention() {
+      &:after {
+        background-color: color('content');
+      }
+    }
+    @include mq(desktop) {
+      width: 20px;
+      height: 20px;
+    }
+    &:after {
+      position: absolute;
+      content: " ";
+      width: 6px;
+      height: 6px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: transparent;
+      border-radius: 10px;
+      transition: $transition;
+      @include mq(desktop) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.c-slider__dots--white .slick-dots {
+  li.slick-active button::after {
+    background-color: color('white');
+  }
+
+  button {
+    border: 1px solid color('white');
+  }
+}

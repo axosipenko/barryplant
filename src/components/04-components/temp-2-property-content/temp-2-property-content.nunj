@@ -1,0 +1,46 @@
+<div class="o-wrapper">
+  <div class="c-property-content o-layout">
+    <div class="c-property-content__sidebar o-layout__item u-4/12@tablet">
+      {% if auction %}
+        <h2>Auction <small>(unless sold prior)</small></h2>
+      {% endif %}
+      <div class="c-property-content__auction-date">
+        <a class="c-calendar-link" href="https://test.com">{{ auctionDate }} {% render '@svg-icon-calendar' %}</a>
+      </div>
+      <div class="c-property-content__sidebar_inspect">
+        <h3>Inspect:</h3>
+        <ul class="c-property-content__inspect-dates">
+          {% for item in inspect %}
+            <li class="c-property-content__inspect-date">
+              <a class="c-calendar-link" href="https://test.com">{{ item }} {% render '@svg-icon-calendar' %}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <p class="c-property-content__sidebar_enquire"><a href="https://test.com">Enquire about this property</a></p>
+      <p>{{ office }}</p>
+      <h3>Key features</h3>
+      <ul class="c-property-content__key-features">
+        {% for item in keyFeatures %}
+          <li class="c-property-content__key-feature">- {{ item }}</li>
+        {% endfor %}
+      </ul>
+      <div class="c-property-content__sidebar_bottom">
+        {% for item in legalLinks %}
+          <div class="c-property-content__icon-link-container">
+            <a class="c-property-content__icon-link" href="{{ item.link }}">
+              {% render '@svg-icon-' + item.icon %} {{ item.label }}
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div><div class="o-layout__item u-8/12@tablet">
+      <div class="c-property-content__description">
+        <h2>{{ descTitle }}</h2>
+        {% for para in descPara %}
+          <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

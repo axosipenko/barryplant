@@ -1,0 +1,62 @@
+.c-secondary-nav {
+  margin: 0;
+  list-style: none;
+  &__item {
+    display: inline-block;
+    font-size: 0;
+    &:after {
+      @include font-size(size('s'));
+      content: '|';
+      font-family: $sans-serif;
+      font-weight: $sans-serif-light;
+
+      .c-header & {
+        @include mq($until: desktop) {
+          @include font-size(size('base'), 1.25);
+          font-family: $font-regular;
+        }
+
+      }
+
+    }
+    &:last-child:after {
+      display: none;
+    }
+    &:last-child {
+      .c-secondary-nav__link {
+        @include mq(tablet) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__link {
+    @include font-size(size('t'));
+    display: inline-block;
+    margin: 0 $unit*.75;
+    font-family: $sans-serif;
+    font-weight: $sans-serif-light;
+    text-decoration: none;
+    @include mq(tablet) {
+      @include font-size(size('s'));
+    }
+
+    // in header component
+    .c-header & {
+      @include mq($until: desktop) {
+        @include font-size(size('b'), 1.25);
+        display: inline-block;
+
+        margin: 0 ($unit/3*2.7);
+        margin: 0 2.75vw;
+
+        color: color('brand');
+        text-decoration: none;
+        font-family: $font-regular;
+        @include attention() {
+          color: color('secondary');
+        }
+      }
+    }
+  }
+}

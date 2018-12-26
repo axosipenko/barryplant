@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-left-arrow', viewbox: '0 0 30 30', class: ''}, true %}

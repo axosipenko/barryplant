@@ -1,0 +1,332 @@
+.c-mega-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  overflow-y: auto;
+  // background-color: color('secondary');
+  // &--office {
+  //   background-color: color('aliceblue');
+  // }
+
+  &__container {
+    padding: $unit-medium 0;
+    .c-mega-nav--office & {
+      display: none;
+
+      // pull wrapper
+      margin-left: -$unit*.75;
+      margin-right: -$unit*.75;
+      padding-left: $unit*.75;
+      padding-right: $unit*.75;
+      &.is-active {
+        display: block;
+      }
+    }
+
+    background-color: color('secondary');
+    &--office {
+      background-color: color('aliceblue');
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    margin: 0 0 $unit*.75;
+    list-style: none;
+    border-top: 1px solid color('brand');
+    @include mq(tablet) {
+      margin-left: -$unit*1.5;
+      margin-right: -$unit*1.5;
+      margin-bottom: 0;
+      border-top: none;
+    }
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-top: $unit-small;
+    padding-bottom: $unit-small;
+    padding-right: $unit*1.5;
+    font-size: 0;
+    border-bottom: 1px solid color('brand');
+
+    @include mq(tablet, $until: desktop) {
+      width: 50%;
+      padding-top: 0;
+      padding-bottom: $unit * 0.75;
+      padding-left: $unit*1.5;
+      padding-right: $unit*1.5;
+      border-bottom: none;
+
+      &:nth-child(2n+2) {
+        &:before {
+          position: absolute;
+          display: block;
+          content: ' ';
+          top: 0;
+          bottom: 0;
+          left: 0;
+          border-left: 2px solid color('brand');
+        }
+      }
+
+      &:nth-child(n+3) {
+        padding-top: $unit * 0.75;
+
+        &:after {
+          position: absolute;
+          display: block;
+          content: ' ';
+          left: 0;
+          right: 0;
+          top: 0;
+          border-top: 2px solid color('brand');
+        }
+      }
+
+      &:nth-child(2n+1) {
+        &:after {
+          left: $unit*1.5;
+        }
+      }
+      &:nth-child(2n+2) {
+        &:after {
+          right: $unit*1.5;
+        }
+      }
+
+    }
+
+    @include mq(desktop) {
+      width: 33.3333%;
+      padding-left: $unit*1.5;
+      padding-right: $unit*1.5;
+      padding-bottom: $unit * 1.5;
+      border-bottom: none;
+
+      &:nth-child(3n+2) {
+        padding-left: $unit*.75;
+        padding-right: $unit*.75;
+      }
+
+      &:nth-child(3n+2) {
+        &:before {
+          position: absolute;
+          display: block;
+          content: ' ';
+          top: 0;
+          bottom: 0;
+          left: -$unit*.75;
+          border-left: 2px solid color('brand');
+        }
+      }
+      
+      &:nth-child(3n+3) {
+        position: relative;
+        &:before {
+          position: absolute;
+          display: block;
+          content: ' ';
+          left: 0;
+          top: 0;
+          bottom: 0;
+          border-left: 2px solid color('brand');
+        }
+      }
+
+      &:nth-child(n+4) {
+        padding-top: $unit*1.5;
+        &:after {
+          position: absolute;
+          display: block;
+          content: ' ';
+          left: 0;
+          right: 0;
+          top: 0;
+          border-top: 2px solid color('brand');
+        }
+      }
+
+      &:nth-child(3n+1) {
+        &:after {
+          left: $unit*1.5;
+        }
+      }
+      &:nth-child(3n+3) {
+        &:after {
+          right: $unit*1.5;
+        }
+      }
+    }
+
+  }
+  &__link {
+    @include font-size(size('xl'), 1.4);
+    color: color('white');
+    text-decoration: none;
+    font-family: $font-regular;
+    @include attention() {
+      color: color('white');
+    }
+    @include mq(tablet) {
+      @include font-size(size('xxxl'), 1.25);
+    }
+    @include mq(wide) {
+      @include font-size(size('xxh'), 1.25);
+    }
+
+    .c-mega-nav__container--office & {
+      color: color('content');
+      @include attention() {
+        color: color('content');
+      }
+    }
+  }
+
+  &__sub-toggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: color('white');
+    display: inline-block;
+    float: right;
+    padding: 0 0 0 $unit;
+    line-height: 62px;
+    @include mq(tablet) {
+      display: none;
+    }
+    &.is-active {
+      .c-svgicon--icon-dash {
+        display: inline-block;
+      }
+      .c-svgicon--icon-down-arrow {
+        display: none;
+      }
+    }
+    .c-svgicon {
+      vertical-align: middle;
+      &--icon-dash {
+        display: none;
+      }
+    }
+
+    .c-mega-nav__container--office & {
+      color: color('content');
+      @include attention() {
+        color: color('content');
+      }
+    }
+  }
+  
+  &__sub-items {
+    overflow: hidden;
+    margin: 0;
+    list-style: none;
+    max-height: 0;
+    opacity: 0;
+    transition: .25s max-height ease-in-out, .25s opacity ease-in-out;
+    &.is-active {
+      overflow: visible;
+      max-height: 99rem;
+      opacity: 1;
+    }
+    @include mq(tablet) {
+      overflow: visible;
+      margin: $unit 0 0;
+      max-height: none;
+      opacity: 1;
+    }
+  }
+
+  &__sub-item {
+    margin-bottom: $unit;
+    &:first-child {
+      margin-top: $unit;
+    }
+    &:last-child {
+      margin-bottom: $unit*.75;
+    }
+    @include mq(tablet) {
+      margin-bottom: $unit-small;
+
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include mq(wide) {
+      margin-bottom: $unit*.75;
+    }
+  }
+
+  &__sub-link {
+    @include font-size(size('s'), 18px);
+    font-family: $sans-serif;
+    font-weight: $sans-serif-light;
+    color: color('white');
+    text-decoration: none;
+    @include attention() {
+      color: color('white');
+    }
+    @include mq(tablet) {
+      @include font-size(size('base'), 24px);
+    }
+    @include mq(wide) {
+      @include font-size(size('xb'), 24px);
+    }
+
+    .c-mega-nav__container--office & {
+      color: color('content');
+      @include attention() {
+        color: color('content');
+      }
+    }
+  }
+
+  // specific scopes
+  sup {
+    @include font-size(size('t'), 18px);
+  }
+
+  &__nav {
+    margin-bottom: $unit-medium;
+  }
+
+  &__secondary-nav {
+    margin-bottom: $unit;
+    color: color('white');
+    text-align: center;
+    .c-mega-nav__container--office & {
+      color: color('content');
+    }
+  }
+
+  @include mq(tablet) {
+    &__nav,
+    &__social-links,
+    &__secondary-nav {
+      display: none;
+    }
+
+    &__container {
+      padding: 30px 30px 10px;
+    }
+  }
+
+  @include mq(desktop) {
+    &__container {
+      padding-top: $unit * 3;
+      padding-bottom: $unit * 3;
+    }
+  }
+}

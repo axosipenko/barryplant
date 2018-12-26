@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-googleplus', viewbox: '0 0 36 23', class: ''}, true %}

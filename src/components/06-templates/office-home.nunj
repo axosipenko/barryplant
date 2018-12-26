@@ -1,0 +1,3 @@
+{% render '@header--office' %}
+{% render '@el-6-listing-preview-tile' %}
+{% render '@footer' %}

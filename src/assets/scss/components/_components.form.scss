@@ -1,0 +1,182 @@
+.c-form {
+
+  &__select {
+
+	  .selectize-input {
+      padding: $unit-small*1.25 $unit;
+	  }
+
+	  .selectize-input input,
+    .selectize-input .item {
+      @include mq(tablet) {
+        @include font-size(size('s'));
+      }
+      @include mq(desktop) {
+	      @include font-size(size('l'));
+      }
+	  }
+
+	  .selectize-dropdown-content .option {
+
+		  margin-left: 0px;
+
+	      padding-left: 20px;
+		   @include font-size(size('xt'));
+
+	      @include mq(tablet) {
+		       padding-left: 16px;
+		      @include font-size(size('xt'));
+	      }
+	      @include mq(desktop) {
+		       padding-left: 25px;
+		      @include font-size(size('xb'));
+	      }
+
+
+	  }
+
+
+	  &-sub {
+		  float:left;
+		  width: auto;
+	      padding-left: 0px;
+
+	      @include mq(tablet) {
+		  	padding-right:0px;
+	      }
+	      @include mq(desktop) {
+	        padding-right:40px;
+	      }
+
+		  &.wide {
+			  .selectize-input {
+
+					@include mq(tablet) {
+						width: 140px;
+					}
+					@include mq(desktop) {
+						width: 180px;
+					}
+			  }
+		  }
+		  &.regular {
+			  .selectize-input {
+
+				@include mq(tablet) {
+					width: 90px;
+				}
+				@include mq(desktop) {
+					width: 120px;
+				}
+			  }
+		  }
+		  .selectize-input {
+			  background: none;
+			  box-shadow: none;
+
+
+
+			  &.input-active, &.full {
+				  background: none;
+				  box-shadow: none;
+			  }
+			  input {
+				 // @include font-size(size('s')) ;
+
+
+				@include mq(tablet) {
+					font-size:size('s') !important;
+				}
+				@include mq(desktop) {
+					font-size:size('base') !important;
+				}
+			  }
+
+		  }
+		  .selectize-input input, .selectize-input .item {
+			padding-left: 0px !important;
+			margin-left:0px !important;
+			//width: auto !important;
+
+
+		  }
+		  .selectize-input.input-active {
+				background:transparent !important;
+	  	   }
+	  }
+
+  }
+
+  .form-btn {
+	  font-size: 18px;
+	  font-weight:600;
+	  span {
+
+	  }
+ 	   @include mq(tablet) {
+
+			    font-size: 20px;
+			}
+ 	   @include mq(desktop) {
+
+			    font-size: 24px;
+			}
+	}
+
+	  &__restrict-left-padding {
+		  padding-left: 24px;
+		  padding-right: 24px;
+	      @include mq(tablet) {
+		   padding-right: 0px;
+		   padding-left: 14px;
+	      }
+	      @include mq(desktop) {
+		   padding-left: 24px;
+	      }
+	  }
+
+	   &__max-input-height{
+		span {
+			 padding: .25em 1.5em;
+	      @include mq(tablet) {
+		   padding: .02em 2em;
+	      }
+	      @include mq(desktop) {
+		    padding: .25em 2em;
+	      }
+	  	}
+	  }
+
+
+
+
+	  &__sub-form-selects-holder {
+		  padding-left:20px;
+		  margin-top:-20px;
+		  display:none;
+	      @include mq(tablet) {
+		   	display:block;
+	      }
+	      @include mq(desktop) {
+		    display:block;
+	      }
+
+	  }
+
+
+
+}
+
+// TODO: Fix main advanced search form
+.c-form-control.c-form-control--inline-label.changed .selectize-input .item,
+.c-form-control.c-form-control--inline-label.c-form-control--type-lookup.focus .selectize-input .item,
+.c-form-control.c-form-control--inline-label.c-form-control--type-lookup.focus .selectize-input input {
+  margin: 0;
+}
+
+
+
+
+
+
+

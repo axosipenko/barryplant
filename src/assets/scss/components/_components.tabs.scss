@@ -1,0 +1,23 @@
+.c-tabs {
+  margin-bottom: $unit-tiny;
+  @include mq(tablet) {
+    margin-bottom: $unit-small;
+  }
+  &__heading,
+  &__item,
+  &__tabs-name
+   {
+    margin-right: $unit-small*.75;
+    @include mq(desktop) {
+      margin-right: $unit*2/3;
+    }
+  }
+  &__item {
+    @extend .c-link;
+    @extend .c-link--content;
+    text-transform: lowercase;
+  }
+  &__tabs-name {
+    @extend .u-h4;
+  }
+} 

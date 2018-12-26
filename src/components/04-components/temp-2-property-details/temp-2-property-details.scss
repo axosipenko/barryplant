@@ -1,0 +1,143 @@
+.c-property-details {
+  &__title {
+    h1 {
+      @include font-size(size('l'), 1.1);
+      margin-bottom: 12px;
+      @include mq(tablet) {
+        @include font-size(size('xl'), 1.1);
+      }
+      @include mq(desktop) {
+        @include font-size(size('xh'), 1.1);
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__keydetails {
+    @include font-size(size('t'), 1);
+    font-family: 'Shapiro-35FeatherText';
+    margin-top: 12px;
+    margin-bottom: 6px;
+    @include mq(desktop) {
+      @include font-size(size('xb'), 1);
+      text-align: right;
+    }
+    span,
+    svg {
+      vertical-align: middle;
+      margin-left: 1px;
+      @include mq(desktop) {
+        margin-left: 4px;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .c-svgicon {
+      @include mq(tablet) {
+        transform: translateY(-2px);
+      }
+      &--icon-bedroom {
+        @include mq($until: tablet) {
+          width: 15px;
+          height: 10px;
+        }
+      }
+      &--icon-bathroom {
+        @include mq($until: tablet) {
+          width: 15px;
+          height: 11px;
+        }
+      }
+      &--icon-bathroom {
+        @include mq($until: tablet) {
+          width: 15px;
+          height: 11px;
+        }
+      }
+      &--icon-toilet {
+        @include mq($until: tablet) {
+          width: 10px;
+          height: 11px;
+        }
+      }
+      &--icon-garage {
+        @include mq($until: tablet) {
+          width: 12px;
+          height: 9px;
+        }
+      }
+      &--icon-study {
+        @include mq($until: tablet) {
+          width: 13px;
+          height: 10px;
+        }
+      }
+    }
+  }
+  &__keydetail {
+    display: inline-block;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    @include mq(desktop) {
+      margin-right: 0;
+      margin-left: 12px;
+    }
+  }
+  &__price-interaction {
+    font-family: 'Shapiro-35FeatherText';
+    padding-top: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    @include font-size(size('t'), 1.4);
+    @include mq(desktop) {
+      margin-bottom: 48px;
+      @include font-size(size('xb'), 1.4);
+    }
+    @include inuit-clearfix();
+  }
+  &__price {
+    display: inline-block;
+  }
+  &__interaction {
+    float: right;
+    @include mq($until: largepalm) {
+      display: none;
+    }
+    a {
+      text-decoration: none;
+      margin-left: 18px;
+      @include font-size(size('xxt'), 1.4);
+      @include mq(desktop) {
+        @include font-size(size('s'), 1.4);
+      }
+    }
+    .c-svgicon {
+      vertical-align: middle;
+      margin-left: 2px;
+      @include mq(desktop) {
+        margin-left: 4px;
+      }
+      &--icon-favourite-alt {
+        @include mq($until: desktop) {
+          width: 15px;
+          height: 13px;
+          transform: translateY(-2px);
+        }
+      }
+      &--icon-print {
+        @include mq($until: desktop) {
+          width: 15px;
+          height: 16px;
+        }
+      }
+      &--icon-share {
+        @include mq($until: desktop) {
+          width: 13px;
+          height: 14px;
+        }
+      }
+    }
+  }
+}

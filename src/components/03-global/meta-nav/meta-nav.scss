@@ -1,0 +1,30 @@
+.c-meta-nav {
+  margin: 0;
+  list-style: none;
+  &__item {
+    display: inline-block;
+    font-size: 0;
+  }
+  &__link {
+    display: inline-block;
+    margin: 0 $unit;
+    text-decoration: none;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include attention() {
+      color: color('brand');
+    }
+    .c-svgicon--icon-nav-close {
+      display: none;
+    }
+    &.is-active {
+      .c-svgicon--icon-nav-close {
+        display: inline-block;
+      }
+      .c-svgicon--icon-nav {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.c-footer-logo {
+  display: inline-block;
+  color: color('white');
+  fill: color('primary');
+  font-size: 0;
+  @include attention() {
+    color: color('white');
+    fill: color('primary');
+  }
+  .c-svgicon {
+    width: 140px;
+    height: 32px;
+    @include mq(tablet) {
+      width: 232px;
+      height: 52px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{# Macro for rending select elements #}
+{% macro htmlFormControlInput(dataSource, attrKey) %}
+  <label for="{{ attrKey }}" class="field-label c-form-control__label">{{ dataSource[attrKey].placeholder }}</label>
+
+    {% if( dataSource[attrKey].fieldType == 'lookup' ) %}
+      <select name="{{ attrKey }}" id="select__{{ attrKey }}" class="c-form-text c-form-text--{{dataSource[attrKey].key}}" data-placeholder="{{ dataSource[attrKey].placeholder }}" placeholder="{{ dataSource[attrKey].placeholder }}">
+      <option  value="" class="placeholder-option"></option>
+    {% else %}
+      <select name="{{ dataSource[attrKey].key }}" id="select__{{ attrKey }}" class="c-form-select" data-placeholder="{{ dataSource[attrKey].placeholder }}" placeholder="{{ dataSource[attrKey].placeholder }}">
+      <option value="" class="placeholder-option">{{ dataSource[attrKey].placeholder }}</option>
+      {% for option in dataSource[attrKey].options %}
+        <option value="{{ option.key }}" class="">{{ option.label }}</option>
+      {% endfor %}
+    {% endif %}
+  </select>
+{% endmacro %}
+
+{% macro htmlFormContainer(dataSource, attrKey, classes) %}
+  <div class="c-form-control c-form-control--inline-label c-form-control--type-{{dataSource[attrKey].fieldType}} o-layout__item {{ classes }} {% if dataSource[attrKey].fieldState %}{{ dataSource[attrKey].fieldState }}{% endif %} " >
+    {{ htmlFormControlInput(dataSource,attrKey) }}
+    {% if dataSource[attrKey].stateMessage %}
+      <div class="c-form-control__validation-message">{{ dataSource[attrKey].stateMessage }}</div>
+    {%  endif %}
+  </div>
+
+{% endmacro %}
+
+
+
+<div class="c-banner" style="background-image: url('{{ staticImgPath + '/search/search-1.jpg' }}'); ">
+	<div class=" o-wrapper">
+
+		<div class="c-banner__position-center">
+			<header class="c-banner__header u-11/12" >
+				<h1>{{ title }}</h1>
+			</header>
+
+			<div class="c-form">
+
+				  <form action="" name="search">
+
+				    <div class="o-layout" >
+						{{ htmlFormContainer(formFields, 'listingType', 'u-4/12 u-3/12@tablet u-3/12@desktop   c-form__select') }}
+						{{ htmlFormContainer(formFields, 'searchRegion', 'c-form-control--icon-search u-2/2  u-6/12@tablet c-form__select c-form__restrict-left-padding') }}
+					    <div class=" u-3/12 u-1/6&tablet  o-layout__item  c-form__restrict-left-padding">
+					      <div class="form-action__submit">
+					        <button type="submit" role="button" class="c-btn c-btn--primary c-btn--animated c-btn--large c-form__max-input-height form-btn" data-text="{{ searchBtnLabel }}"><span>{{ searchBtnLabel }}</span></button>
+					      </div>
+					    </div>
+				    </div>
+
+				    <div class="o-layout c-form__sub-form-selects-holder ">
+				      {{ htmlFormContainer(formFields, 'propertyType', 'wide c-form__select-sub') }}
+				      {{ htmlFormContainer(formFields, 'minPrice', 'regular c-form__select-sub') }}
+				      {{ htmlFormContainer(formFields, 'maxPrice', 'regular c-form__select-sub') }}
+				      {{ htmlFormContainer(formFields, 'minBedrooms', 'regular c-form__select-sub') }}
+				      {{ htmlFormContainer(formFields, 'minBathrooms', 'regular c-form__select-sub') }}
+				    </div>
+
+				</form>
+
+
+			</div>
+
+	  </div>
+
+	  <div class="c-banner__bottom-triangle"></div>
+	</div>
+
+</div>
+
+
+
+
+
+

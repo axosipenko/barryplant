@@ -1,0 +1,60 @@
+.c-agent-features {
+  &__title {
+    @include font-size(size('xxxb'));
+    font-weight: $sans-serif-medium;
+  }
+
+  &__info-block {
+    margin: 0 0 $unit-medium;
+
+    &__label,
+    &__description {
+      @include font-size(size('xxb'));
+      font-weight: $sans-serif-light;
+      line-height: $base-line-height;
+      margin: 0;
+    }
+
+    &__label {
+      color: color('brand');
+    }
+  }
+
+  &__gallery {
+    display: none;
+
+    @include mq(tablet) {
+      display: inline-block;
+    }
+  }
+}
+
+.c-slider--agent-features {
+  display: flex;
+  flex-direction: column;
+
+  .c-slider__slides {
+    order: 0;
+    margin-bottom: $unit-small;
+
+    @include mq(tablet) {
+      margin: 0 0 12px -24px;
+    }
+  }
+
+  .c-agent-features__information {
+    order: 1;
+  }
+
+  .c-slider__footer {
+    order: 2;
+
+    @include mq(tablet) {
+      padding-top: 0;
+    }
+
+    @include mq(desktop) {
+      padding-top: $unit*1.25;
+    }
+  }
+}

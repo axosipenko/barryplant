@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-radio-active', viewbox: '0 0 20 20', class: 'c-icon-radio-active__svg'}, true %}

@@ -1,0 +1,19 @@
+.u-skip {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  top: -10px;
+  z-index: -999;
+  &:hover,
+  &:active,
+  &:focus {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    top: $unit-small;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+}

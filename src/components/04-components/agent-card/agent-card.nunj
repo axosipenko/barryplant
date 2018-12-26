@@ -1,0 +1,11 @@
+<div class="c-agent-card">
+  <img src="{{photoPath}}" class="c-agent-card__img" alt="Agent Photo" />
+  <h3 class="c-agent-card__name">{{firstName}} {{lastName}}</h3>
+  <p class="c-agent-card__job-title">{{jobTitle}}</p>
+  <div class="c-agent-card__content">
+    <a href="tel:{{phone}}" class="c-agent-card__phone">{{phone}}</a>
+    <span>|</span>
+    <a href="mailto:{{email}}" class="c-agent-card__email">Email</a>
+  </div>
+  <a href="javascript:void(0)" class="c-agent-card__link">> View Profile</a>
+</div>

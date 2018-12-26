@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-checklist', viewbox: '0 0 25 25', class: ''}, true %}

@@ -1,0 +1,89 @@
+
+$selectize-color-text: color('blackpearl');
+/*$selectize-color-highlight*/
+/*$selectize-color-dropdown: #;
+$selectize-color-input: #*/
+
+$selectize-font-size: size('s');
+$selectize-line-height: size('s');
+
+$selectize-border: 0 none;
+$selectize-border-radius: 0;
+
+$selectize-padding-x: $unit-small;
+$selectize-padding-y: $unit-small;
+
+$selectize-tablet-padding-x: $unit-medium;
+$selectize-tablet-padding-y: $unit-small;
+
+$selectize-desktop-padding-x: $unit-small;
+$selectize-desktop-padding-y: $unit-small;
+
+$selectize-padding-item-x: $unit-medium;
+$selectize-padding-item-y: $unit-small;
+
+$selectize-padding-dropdown-item-x: $selectize-padding-x;
+
+$selectize-padding-dropdown-item-y: $unit-small;
+$selectize-margin-item-x: 3px;
+$selectize-margin-item-y: 3px;
+
+$selectize-shadow-input: $input-shadow;
+$selectize-shadow-input-focus: $input-shadow-focus;
+$selectize-dropdown-border: 0 none;
+
+$selectize-arrow-size: $unit-small;
+$selectize-arrow-color: transparent;
+$selectize-arrow-offset: 15px;
+
+$selectize-lighten-disabled-item: 30% ;
+$selectize-lighten-disabled-item-text: 30%;
+$selectize-lighten-disabled-item-border: 30%;
+$selectize-opacity-disabled: 0.5;
+
+.selectize-control{
+  font-family: $sans-serif;
+  font-weight: $sans-serif-light;
+  transition: $transition;
+
+
+}
+
+.selectize-input{
+
+  &:placeholder{
+    color:$selectize-color-text;
+    //line-height: 1em;
+  }
+
+  &:after {
+    /*top: 75% !important;*/
+    /*margin-top: 0px !important;*/
+  }
+  & > input{
+    // width:auto !important;
+    &:placeholder{
+      color:$selectize-color-text;
+    }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      /*line-height: 1em;
+      padding-top:.5em;
+      top: 0;*/
+      color:$selectize-color-text;
+      width:auto !important;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color:$selectize-color-text;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color:$selectize-color-text;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color:$selectize-color-text;
+      opacity: 1;
+    }
+  }
+}
+
+

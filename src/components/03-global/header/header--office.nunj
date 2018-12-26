@@ -1,0 +1,43 @@
+<div class="c-header c-header--{{modifier}}" role="banner" data-header="header">
+  <div class="c-header__sticky-container" data-sticky-container="sticky-container">
+    <div
+      class="c-header__sticky"
+      data-sticky="is-stuck"
+      data-hide-sticky="75"
+      data-toggle-content="mega-nav"
+    >
+      <div class="c-header__sticky-content">
+        <div class="o-wrapper">
+          <div class="c-header__container">
+            <div class="c-header__logo">
+              {% render '@header-logo' %}
+              {% if office %}
+                <div class="c-header__office">{{ office }}</div>
+              {% endif %}
+            </div>
+            <div class="c-header__meta-nav">
+              {% render '@meta-nav' %}
+            </div>
+            <div class="c-header__navs">
+              <div class="c-header__nav">
+                {% if office %}
+                {% render '@nav--office'%}
+                {% endif %}
+              </div>
+              <div class="c-header__nav-tablet">
+                {% set tabletNavItems = { navItems: officeNavItems.concat(secondaryNavItems) } %}
+                {% render '@nav', tabletNavItems %}
+              </div>
+              <div class="c-header__secondary-nav">
+                {% render '@secondary-nav' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-header__mega-nav" data-toggle-content="mega-nav" data-sticky-fill="sticky-fill">
+        {% render '@mega-nav' %}
+      </div>
+    </div>
+  </div>
+</div>

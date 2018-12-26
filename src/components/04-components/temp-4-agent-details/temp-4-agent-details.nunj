@@ -1,0 +1,31 @@
+<div class="o-wrapper">
+  <div class="c-agent-details">
+    <div class="o-layout o-module">
+      <div class="o-layout__item o-module__item c-agent-details__image-wrap u-7/12@desktop">
+        <div class="o-module__content">
+          <img src="{{ staticImgPath + '/temp-4-agent/agent-1.jpeg' }}" alt=""  class="c-agent-details__image">
+        </div>
+      </div><div class="o-layout__item o-module__item u-5/12@desktop">
+        <div class="c-agent-details__content o-module__content">
+          <a href="#" class="c-agent-details__back">< Back</a>
+          <h1 class="c-agent-details__name">{{ name }}</h1>
+          <h3 class="c-agent-details__title">{{ jobTitle }}</h3>
+          <div class="c-agent-details__numbers"><a href="#">M {{ mobile }}</a> &nbsp; | &nbsp; <a href="#">T {{ telephone }}</a></div>
+          <div class="c-agent-details__devider"> &nbsp; | &nbsp; </div>
+          <div class="c-agent-details__links"><a href="{{ site }}">{{ site }}</a> &nbsp; | &nbsp; <a href="mailto:{{ email }}">{{ emailLabel }}</a></div>
+          <ul class="c-agent-details__social">
+            {% for item in socialLinks %}
+              <li><a href="{{ item.link }}">{% render '@svg-icon-' + item.label %}</a></li>
+            {% endfor %}
+          </ul>
+          <div class="c-agent-details__address">{{ address1 }}<br>{{ address2 }}</div>
+          <div class="c-agent-details__interation">
+            <a href="javascript:void(0)">Add to Wishlist {% render '@svg-icon-favourite-alt' %}</a>
+            <a href="javascript:void(0)">Share {% render '@svg-icon-share' %}</a>
+            <a href="javascript:void(0)">Print {% render '@svg-icon-print' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

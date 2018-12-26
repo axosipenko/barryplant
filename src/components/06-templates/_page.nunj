@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BarryPlant Component {{ _target.label }}</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <link media="all" rel="stylesheet" href="{{ '/css/screen.min.css' | path }}">
+</head>
+<body class="{{ _target.context.bodyClasses }}">
+  {{ yield }}
+</body>
+<script src="{{ '/js/script.min.js' | path }}"></script>
+</html>

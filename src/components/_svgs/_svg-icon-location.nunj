@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-location', viewbox: '0 0 48 48', class: ''}, true %}

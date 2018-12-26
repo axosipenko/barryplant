@@ -1,0 +1,20 @@
+// Reassign `$inuit-global-spacing-unit` to `$unit`.
+$unit: $inuit-global-spacing-unit;
+$unit-tiny: $inuit-global-spacing-unit-tiny;
+$unit-small: $inuit-global-spacing-unit-small;
+$unit-medium: $inuit-global-spacing-unit*1.25;
+$unit-large: $inuit-global-spacing-unit-large;
+$unit-big: $inuit-global-spacing-unit-large*1.5;
+$unit-huge: $inuit-global-spacing-unit-huge;
+
+$radius: $global-radius;
+$transition: $global-transition;
+
+// Reassign lengthy font-size mixin to `font-size()`.
+@mixin font-size($args...) {
+  @include inuit-font-size($args...);
+}
+
+@mixin clearfix() {
+  @include inuit-clearfix();
+}

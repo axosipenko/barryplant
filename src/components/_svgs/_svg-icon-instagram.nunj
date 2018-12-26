@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-instagram', viewbox: '0 0 26 26', class: ''}, true %}

@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-toilet', viewbox: '0 0 15 17', class: ''}, true %}

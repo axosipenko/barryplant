@@ -1,0 +1,36 @@
+<div class="o-layout">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">Grid Item {{ i+1 }}, Size: 1/2</div>
+  </div>
+  {%- endfor %}
+
+  {% for i in range(0, 3) -%}
+  <div class="o-layout__item u-1/3 o-island">
+    <div class="o-box">Grid Item {{ i+1 }}, Size: 1/3</div>
+  </div>
+  {%- endfor %}
+  
+  {% for i in range(0, 4) -%}
+  <div class="o-layout__item u-1/4 o-island">
+    <div class="o-box">Grid Item {{ i+1 }}, Size: 1/4</div>
+  </div>
+  {%- endfor %}
+
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">Grid Item 1, Size: 1/2</div>
+  </div>
+  <div class="o-layout__item u-1/4 o-island">
+    <div class="o-box">Grid Item 2, Size: 1/4</div>
+  </div>
+  <div class="o-layout__item u-1/4 o-island">
+    <div class="o-box">Grid Item 3, Size: 1/4</div>
+  </div>
+
+  <div class="o-layout__item u-5/12 o-island">
+    <div class="o-box">Grid Item 4, Size: 5/12</div>
+  </div>
+  <div class="o-layout__item u-7/12 o-island">
+    <div class="o-box">Grid Item 5, Size: 7/12</div>
+  </div>
+</div>

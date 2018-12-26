@@ -1,0 +1,25 @@
+<div class="x-element u-padding">
+  <span class="u-h4">Calendar Link</span><br>
+  <a href="https://test.com" class="c-calendar-link">Saturday 18 August 11:00am - 11:30am {% render '@svg-icon-calendar' %}</a>
+</div>
+<hr>
+<div class="x-element u-padding">
+  <span class="u-h4">Heading .u-h4</span><br>
+  <h4 class="u-h4">Heading 4</h4>
+</div>
+<hr>
+<div class="x-element u-padding">
+  <div class="u-h4">Links</div>
+  <a href="https://test.com" class="c-link">...view more</a><br />
+  <a href="https://test.com" class="c-link c-link--brand">...view more</a><br />
+  <a href="https://test.com" class="c-link c-link--content">...view more</a><br />
+</div>
+<hr>
+<div class="x-element u-padding">
+  <div class="u-h4">Links - Active/Hover</div>
+  <a href="https://test.com" class="c-link is-active">...view more</a><br />
+  <a href="https://test.com" class="c-link c-link--brand is-active">...view more</a><br />
+  <a href="https://test.com" class="c-link c-link--content is-active">...view more</a><br />
+</div>
+<hr>
+

@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-twitter', viewbox: '0 0 27 22', class: ''}, true %}

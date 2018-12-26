@@ -1,0 +1,29 @@
+<div class="o-wrapper">
+  <div class="c-property-details o-layout">
+    <div class="c-property-details__title o-layout__item u-7/12@desktop">
+      <h1>{{ address }}</h1>
+    </div><div class="c-property-details__keydetails o-layout__item u-5/12@desktop">
+      {% for item in keyDetails %}
+        <div class="c-property-details__keydetail">
+          {% if item.label %}
+            <span class="c-property-details__keydetail_label">{{ item.label }}</span>
+          {% endif %}
+          <span class="c-property-details__keydetail_value">{{ item.value }}</span>
+          {% if item.icon %}
+            {% render '@svg-icon-' + item.icon %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="c-property-details__price-interaction clearfix">
+    <div class="c-property-details__price">
+      {{ price }}
+    </div>
+    <div class="c-property-details__interaction">
+      <a href="javascript:void(0)">Add to Wishlist {% render '@svg-icon-favourite-alt' %}</a>
+      <a href="javascript:void(0)">Print {% render '@svg-icon-print' %}</a>
+      <a href="javascript:void(0)">Share {% render '@svg-icon-share' %}</a>
+    </div>
+  </div>
+</div>

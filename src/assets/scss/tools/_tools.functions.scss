@@ -1,0 +1,28 @@
+@function shade($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function color($key) {
+  @if map-has-key($theme-colours, $key) {
+    @return map-get($theme-colours, $key);
+  }
+  @warn "Unknown '#{$key}' in $theme-colours.";
+  @return null;
+}
+
+@function size($key) {
+  @if map-has-key($font-sizes, $key) {
+    @return map-get($font-sizes, $key);
+  }
+  @warn "Unknown '#{$key}' in $modular_scale.";
+  @return null;
+}
+
+@function spacer($lines: 1, $font-size: $base-font-size) {
+  $value: $base-line-height / $font-size * $lines;
+  @return $value * 1em;
+}

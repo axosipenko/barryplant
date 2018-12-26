@@ -1,0 +1,36 @@
+.c-link {
+  display: inline-block;
+  margin-bottom: $unit-tiny;
+  @extend .u-h4;
+  @extend %hover-underline;
+  @extend %hover-underline--double;
+  @include mq(desktop) {
+    margin-bottom: $unit-small;
+  }
+  &:before {
+    background-color: color('brand');
+  }
+  &.is-active {
+    color: color('brand');
+  }
+
+  &--content {
+    color: color('content');
+    @include attention() {
+      color: color('content');
+    }
+    &.is-active {
+      color: color('content');
+    }
+  }
+
+  &--brand {
+    color: color('brand');
+    @include attention() {
+      color: color('brand');
+    }
+    &.is-active {
+      color: color('brand');
+    }
+  }
+}

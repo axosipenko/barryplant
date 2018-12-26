@@ -1,0 +1,44 @@
+.c-social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  // we switch to vertical on larger screens
+  @include mq(tablet) {
+    flex-direction: column;
+  }
+}
+
+.c-social-link {
+  display: block;
+  margin: 0 $unit;
+
+  color: color('white');
+
+  @include attention() {
+    color: color('brand');
+  }
+
+  .c-social-links--content & {
+    color: color('content');
+    @include attention() {
+      color: color('brand');
+    }
+  }
+
+  .c-svgicon {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  // we switch to vertical on larger screens
+  @include mq(tablet) {
+    margin: 0 0 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

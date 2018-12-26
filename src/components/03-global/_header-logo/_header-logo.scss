@@ -1,0 +1,26 @@
+.c-header-logo {
+  display: inline-block;
+  color: color('secondary');
+  fill: color('primary');
+  font-size: 0;
+  @include attention() {
+    color: color('secondary');
+    fill: color('primary');
+  }
+  &__svg {
+    width: 150px;
+    height: 34px;
+    @include mq(palm) {
+      width: 184px;
+      height: 42px;
+    }
+    @include mq(tablet) {
+      width: 254px;
+      height: 58px;
+    }
+    @include mq(xwide) {
+      width: 332px;
+      height: 74px;
+    }
+  }
+}

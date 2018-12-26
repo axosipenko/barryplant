@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'logo', viewbox: '0 0 332 74', class: 'c-header-logo__svg'}, true %}

@@ -1,0 +1,190 @@
+.c-header {
+  z-index: 2;
+  position: relative;
+  background: color('white');
+
+  &__sticky-container {
+    position: relative;
+  }
+
+  &__sticky {
+    position: relative;
+    top: 0;
+    z-index: 1;
+
+    transition: top map-get($global-transition-speeds, slow) $global-transition-timing-function;
+
+    &.is-stuck {
+      position: fixed;
+      width: 100%;
+
+      &.is-hidden {
+        top: -100%;
+      }
+    }
+  }
+
+  &__sticky-content {
+    position: relative;
+    z-index: 1;
+
+    background-color: color('white');
+  }
+
+  &__mega-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    opacity: 0;
+    transition: $global-transition-easy;
+    transition: (
+      opacity map-get($global-transition-speeds, slow) $global-transition-timing-function,
+      transform map-get($global-transition-speeds, slow) $global-transition-timing-function
+    );
+    transform: translateY(-100%);
+
+    transform: translateY(-100%);
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__container {
+    @include inuit-clearfix();
+    position: relative;
+    padding-top: $unit;
+    padding-bottom: $unit-small+2;
+    @include mq(tablet) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    @include mq(desktop) {
+      padding-top: 62px;
+    }
+  }
+  &__logo {
+    float: left;
+    font-size: 0;
+  }
+
+  &__office {
+    @include font-size(size('t'), 1.4);
+    display: block;
+    margin-left: $unit;
+    vertical-align: bottom;
+    font-family: $font-regular;
+    @include mq(palm) {
+      margin-left: $unit*1.25;  
+    }
+    @include mq(largepalm) {
+      @include font-size(size('b'), 1.4);
+      display: inline-block;
+      margin-left: 0;
+      margin-bottom: $unit-tiny/2;
+      &:before {
+        content: "|";
+        padding: 0 $unit*.75;
+      }
+    }
+    @include mq(tablet) {
+      margin-bottom: $unit-tiny;
+    }
+    @include mq(desktop) {
+      @include font-size(size('xxb'), 1.4);
+    }
+    @include mq(xwide) {
+      @include font-size(size('l'), 1.4);
+      margin-bottom: $unit-small;
+      &:before {
+        padding: 0 $unit;
+      }
+    }
+  }
+
+  &__secondary-nav {
+    display: none;
+    clear: both;
+  }
+
+  &__navs {
+    display: none;
+    @include mq(tablet) {
+      clear: both;
+      font-size: 0;
+      display: block;
+    }
+    @include mq(desktop) {
+      float: right;
+      clear: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    clear: both;
+    margin-top: $unit;
+  }
+
+  &__nav-tablet {
+    display: none;
+
+    padding-top: $unit;
+  }
+
+  &__meta-nav {
+    margin-top: $unit-small*.75;
+    float: right;
+    .c-header--office & {
+      @include mq($from: palm, $until: largepalm) {
+        margin-top: 14px;
+      }
+    }
+    @include mq(tablet) {
+      margin-top: $unit*.75;
+    }
+    @include mq(xwide) {
+      margin-top: $unit-medium;
+      margin-left: $unit-large;
+    }
+  }
+
+  @include mq(tablet) {
+    &__nav-tablet {
+      display: block;
+    }
+  }
+
+  @include mq(desktop) {
+    &__nav-tablet {
+      display: none;
+    }
+
+    &__nav,
+    &__secondary-nav {
+      display: inline-block;
+    }
+
+    &__secondary-nav {
+      position: absolute;
+      top: $unit;
+      right: 0;
+    }
+  }
+
+  @include mq(wide) {
+    &__nav {
+      margin-top: $unit * .75;
+    }
+  }
+
+  @include mq(xwide) {
+    &__nav {
+      margin-top: $unit-medium;
+    }
+  }
+}

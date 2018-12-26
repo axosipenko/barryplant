@@ -1,0 +1,165 @@
+button{
+  &:focus{
+    outline: 0;
+  }
+}
+
+.c-btn {
+
+  display: inline-block;
+  vertical-align: middle;
+  font: inherit;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  padding: $unit-small $unit;
+  transition: $transition;
+  border-radius: $radius;
+  background-color: color("brand");
+  color: color("white");
+
+  border-radius: 0;
+  border:0 none;
+
+  &--text{
+    background-color: transparent;
+    color: color("brand");
+
+    text-decoration: none;
+    //border-bottom: 1px solid color("brand");
+
+    padding: $unit-tiny*.25 $unit-tiny;
+    @extend %hover-underline;
+    @include attention() {
+      color: color('secondary');
+    }
+    &:before{
+      background:color('blackpearl');
+      height:2px !important;
+    }
+
+    &--secondary{
+      color: color("secondary");
+      &:before{
+        background-color: color("secondary");
+      }
+      @include attention() {
+        color: color('primary');
+        &:before{
+          background-color: color("primary");
+        }
+      }
+    }
+
+    &--large{
+      font-size: size('b');
+      //border-bottom: 2px solid color("brand");
+      @include mq(tablet) {
+        font-size: size('xxb');
+      }
+
+    }
+
+  }
+  // rayen button style bg hover from:
+  // https://tympanus.net/Development/ButtonStylesInspiration/
+  &--primary{
+    background-color: color("primary");
+    text-transform: lowercase;
+    &::before{
+      background: color("secondary");
+    }
+  }
+  &--secondary{
+    background-color: color("secondary");
+    text-transform: lowercase;
+    &::before{
+      background: color("primary");
+    }
+  }
+  &--animated{
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    & > span,
+    &::before{
+      padding: $unit-small $unit;
+    }
+
+
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-100%);
+    }
+    & > span {
+      display: block;
+    }
+    &::before,
+    & > span {
+      // padding: .5em 2em;
+      transition: transform 0.3s;
+      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    }
+    &:hover::before {
+      transform: translate3d(0, 0, 0);
+    }
+    &:hover > span {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  &--small {
+    text-decoration: none;
+    @include font-size(size('xb'), 1.4);
+    & > span,
+    &::before{
+      padding: $unit-tiny *.5 $unit-tiny;
+    }
+  }
+
+  &--large {
+    white-space: nowrap;
+    font-size: size('base');
+    & > span,
+    &::before{
+      padding: $unit-tiny $unit;
+    }
+
+
+    @include mq(tablet) {
+      font-size: size('l');
+      & > span,
+      &::before{
+        padding: $unit-small $unit-medium;
+      }
+    }
+    @include mq(desktop) {
+      font-size: size('l');
+      & > span,
+      &::before{
+        padding: $unit-tiny $unit;
+      }
+    }
+  }
+
+  &--prefix{
+    span{
+      &:before{
+        content : '-';
+        margin-right: .25em;
+        margin-left:-.75em;
+        @include mq(tablet) {
+          margin-left:-.25em;
+        }
+      }
+    }
+
+  }
+
+}

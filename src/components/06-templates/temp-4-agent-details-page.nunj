@@ -1,0 +1,4 @@
+{% render '@header' %}
+{% render '@temp-4-agent-details' %}
+{% render '@temp-4-agent-content' %}
+{% render '@footer' %}

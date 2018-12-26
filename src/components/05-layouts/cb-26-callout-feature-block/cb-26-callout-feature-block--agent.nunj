@@ -1,0 +1,5 @@
+<div class="с-callout-feature-block">
+  <div class="o-wrapper">
+    {% render '@agent-features', agent, merge=true %}
+  </div>
+</div>

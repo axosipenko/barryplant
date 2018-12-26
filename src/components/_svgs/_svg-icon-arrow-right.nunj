@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-slide-next', viewbox: '0 0 45 20', class: 'c-slide-arrow-next__svg'}, true %}

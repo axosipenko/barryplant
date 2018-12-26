@@ -1,0 +1,5 @@
+<ul class="c-footer-nav">
+  {% for item in navItems %}<li class="c-footer-nav__item">
+    <a href="javascript:void(0);" class="c-footer-nav__link">{{item.label}}</a>
+  </li>{% endfor %}
+</ul>

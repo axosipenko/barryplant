@@ -1,0 +1,150 @@
+// .c-slider{
+//   display: block;
+//   &__controls{
+//     position: relative;
+
+
+//   }
+//   &__arrow-nav{
+//     display: inline-block;
+//      &--prev, &--next{
+//        width:35px;
+//        height:17px;
+//        vertical-align: text-bottom;
+//        line-height: 1.45em;
+//        svg{
+//          width:100%;
+//          height:100%;
+//        }
+//       text-decoration: none;
+//       cursor: pointer;
+//        display: inline-block;
+//        @include mq(tablet) {
+//          width:46px;
+//          height:21px;
+//          .hidden &{
+//            display: none !important;
+//          }
+//        }
+//        &,svg,path,g,.c-svgicon{
+//          transition: $global-transition;
+//          stroke:color('blackpearl');
+//        }
+//        @include attention() {
+//          &,svg,path,g,.c-svgicon{
+//            stroke:color('brand');
+//          }
+//        }
+
+//     }
+//     &--prev{
+//       margin-right: $unit-small;
+//       @include mq(tablet) {
+//         margin-right: $unit;
+//       }
+
+//     }
+//     &--next{
+//       margin-left: $unit-small;
+//       @include mq(tablet) {
+//         margin-left: $unit;
+//       }
+//     }
+//   }
+
+//   &__nav_more{
+//     margin-top: -.75em;
+//   }
+// }
+
+// /*.slick-list {
+//   .slick-loading & {}
+// }*/
+
+// /* Dots */
+// .c-slider__controls-dots{
+//   display:inline-block;
+// }
+// .slick-dots {
+//   vertical-align: top;
+//   &, li {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//   }
+//   display: inline-block;
+//   text-align: center;
+//   padding: 0;
+//   margin: 0;
+//   width: auto;
+
+//   li {
+//     position: relative;
+//     display: inline-block;
+//     margin: 0 $unit-tiny *.5;
+//     @include mq(tablet) {
+//       margin: 0 $unit-tiny;
+//     }
+//     padding: 0;
+
+//     button {
+//       transition: $global-transition;
+//       cursor:pointer;
+//       content: '';
+//       position: relative;
+//       padding: 3px;
+//       position: relative;
+//       display: inline-block;
+//       width: round($radio-button-size * .75);
+//       height: round($radio-button-size * .75);
+//       @include mq(tablet) {
+//         width: $radio-button-size;
+//         height: $radio-button-size;
+//       }
+//       border: 1px solid color('blackpearl');
+//       border-radius: 100%;
+//       background: transparent;
+
+//       &:after {
+//         transition: $global-transition;
+//         content: ' ';
+//         display: inline-block;
+//         position: absolute;
+//         left: round($radio-button-dot-offset * .7);
+//         top: round($radio-button-dot-offset * .75);
+//         width: round($radio-button-dot-size * .75);
+//         height: round($radio-button-dot-size * .75);
+//         @include mq(tablet) {
+//           left: $radio-button-dot-offset;
+//           top: $radio-button-dot-offset ;
+//           width: $radio-button-dot-size;
+//           height: $radio-button-dot-size;
+//         }
+
+//         border: 0 none;
+//         border-radius: 100%;
+
+//       }
+
+//       &:hover{
+//         border: 1px solid color('brand');
+
+//       }
+//     }
+//     &.slick-active {
+//       button {
+//         &:after {
+//           background: color('blackpearl');
+//         }
+//         &:hover{
+//           &:after {
+//             background: color('brand');
+//           }
+//         }
+//         //background: color('blackpearl');
+
+//       }
+//     }
+
+//   }
+// }

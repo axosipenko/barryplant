@@ -1,0 +1,67 @@
+.c-pagination {
+  &__items {
+    text-align: center;
+    font-size: 0;
+  }
+  
+  &__prev,
+  &__next {
+    display: inline-block;
+    text-decoration: none;
+    transition: $transition;
+    @include font-size(size('base'), 1.4);
+    @include mq(desktop) {
+      @include font-size(size('xl'), 1.4);
+    }
+    .c-svgicon {
+      width: 28px;
+      height: 12px;
+      vertical-align: middle;
+      @include mq(desktop) {
+        width: 45px;
+        height: 20px;
+      }
+    }
+  }
+  &__prev {
+    margin-right: $unit-small;
+    @include mq(desktop) {
+      margin-right: 20px;
+    }
+  }
+
+  .c-pagination__item {
+    @include font-size(size('s'), 22px);
+    display: inline-block;
+    min-width: 24px;
+    padding: 0 $unit-tiny;
+    text-decoration: none;
+    border: 1px solid color('content');
+    transition: $transition;
+    margin-right: $unit-small;
+    @include attention() {
+      color: color('white');
+      background-color: color('content');
+    }
+    &.is-active {
+      color: color('white');
+      background-color: color('content');
+    }
+    @include mq(palm) {
+      @include font-size(size('base'), 1.4);
+      min-width: 32px;
+      padding: $unit-small/3;
+    }
+    @include mq(desktop) {
+      @include font-size(size('xl'), 1.4);
+      min-width: 54px;
+      margin-right: 20px;
+      padding: $unit/3;
+    }
+  }
+  span.c-pagination__item {
+    margin-right: 0;
+    border: none;
+  }
+  
+}

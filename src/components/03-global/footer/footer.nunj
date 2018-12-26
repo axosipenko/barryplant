@@ -1,0 +1,15 @@
+<div class="c-footer" role="contentinfo">
+  <div class="o-wrapper">
+    <div class="c-footer__container">
+      <div class="c-footer__logo">
+        {% render '@footer-logo' %}
+      </div>
+      <div class="c-footer__social-links">
+        {% render '@social-links' %}
+      </div>
+      <div class="c-footer__nav">
+        {% render '@footer-nav' %}
+      </div>
+    </div>
+  </div>
+</div>

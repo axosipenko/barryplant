@@ -1,0 +1,57 @@
+.c-case-features {
+
+  .o-layout {
+    display: flex;
+    flex-flow: column-reverse;
+
+    @include mq(tablet) {
+      flex-flow: row;
+    }
+  }
+
+  &__gallery {
+    margin-bottom: $unit-small;
+
+    @include mq(tablet) {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    @include font-size(size('xh'));
+    font-weight: $sans-serif-medium;
+    color: color('brand');
+  }
+
+  &__info-block {
+    &__label {
+      @include font-size(size('s'));
+      margin: 0;
+    }
+
+    &__description {
+      @include font-size(size('l'));
+      line-height: $base-line-height;
+    }
+  }
+}
+
+.c-slider--case-features {
+  position: relative;
+
+  .c-slider__prev,
+  .c-slider__next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .c-slider__prev {
+    left: 0;
+  }
+
+  .c-slider__next {
+    right: 0;
+  }
+}

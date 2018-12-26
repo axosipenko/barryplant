@@ -1,0 +1,29 @@
+
+.u-hover-underline {
+  &__element {
+    @include hover-underline();
+  }
+
+  // a modifier applied to text which has gone over multiple lines. The above
+  // solution does not work across browsers when the text flows over multiple
+  // lines. This modifier assumes that the JS will manually set the width of
+  // the underline element to give the illusion of an inline element.
+  &--multiline &__element {
+    display: block;
+    margin-right: auto;
+  }
+
+  // modifiers to turn the 'hover underline' functionality off at a given
+  // breakpoint
+  @include mq(tablet) {
+    &--until-tablet &__element::before {
+      content: none;
+    }
+  }
+  @include mq(desktop) {
+    &--until-desktop &__element::before {
+      content: none;
+    }
+  }
+}
+

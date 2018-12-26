@@ -1,0 +1,17 @@
+.c-calendar-link {
+  text-decoration: none;
+  @include attention() {
+    color: inherit;
+    .c-svgicon {
+      color: color('brand');
+    }
+  }
+  .c-svgicon {
+    width: 13px;
+    height: 14px;
+    margin-left: 3px;
+    transform: translateY(2px);
+    color: color('content');
+    transition: $transition;
+  }
+}

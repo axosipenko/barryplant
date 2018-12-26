@@ -1,0 +1,31 @@
+<div class="o-wrapper">
+  <header class="c-tabs">
+    <span class="c-tabs__tabs-name">our team</span>
+    {% for item in previewNavItems %}
+    <a href="javascript:void(0)" class="c-tabs__item {{item.classes}}">{{item.label}}</a>
+    {% endfor %}
+  </header>
+
+  <div class="c-slider--agents">
+    <div class="c-slider__slides  o-layout o-layout--stretch">
+      {% for agent in agents %}
+      <div class="c-slider__slide o-layout__item">
+        {% render '@agent-card', agent, merge=true %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="c-slider__footer">
+      <div class="c-slider__nav">
+        <button class="c-slider__prev">{% render '@svg-icon-slide-previous' %}</button>
+        <div class="c-slider__dots"></div>
+        <button class="c-slider__next">{% render '@svg-icon-slide-next' %}</button>
+      </div>
+      <div class="c-slider__ctas">
+        <a href="javascript:void(0);" class="c-link c-link--brand">-- view full team</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

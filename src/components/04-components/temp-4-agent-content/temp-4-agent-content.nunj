@@ -1,0 +1,25 @@
+<div class="c-agent-content">
+  <div class="o-wrapper">
+    <div class="o-layout o-layout--large">
+      <div class="o-layout__item u-5/12@largepalm">
+        <div class="c-agent-content__summary">
+          {% for para in summaryPara %}
+            <p>{{ para }}</p>
+          {% endfor %}
+        </div>
+      </div><div class="o-layout__item u-7/12@largepalm">
+        <div class="c-agent-content__information">
+          {% for para in infoPara %}
+            <p>{{ para }}</p>
+          {% endfor %}
+        </div>
+        <ul class="c-agent-content__awards">
+          <li>Awards:</li>
+          {% for item in awards %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

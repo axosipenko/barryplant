@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-youtube', viewbox: '0 0 26 18', class: ''}, true %}

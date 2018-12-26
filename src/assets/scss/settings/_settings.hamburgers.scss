@@ -1,0 +1,12 @@
+//  '../../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+
+$hamburger-padding-x           : 15px ;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 29px;
+$hamburger-layer-height        : 3px;
+$hamburger-layer-spacing       : 8px;
+$hamburger-layer-color         : map-get($theme-colours,'blackpearl');
+$hamburger-layer-border-radius : 0;
+$hamburger-hover-opacity       : 0.9;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;

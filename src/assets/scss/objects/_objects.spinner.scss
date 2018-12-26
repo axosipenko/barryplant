@@ -1,0 +1,21 @@
+.o-spinner {
+  width: 20px;
+  height: 20px;
+  margin: $unit auto;
+  border-radius: 50%;
+  border: 2px solid color("content");
+  border-left-color: color("brand");
+  animation: spin 1s infinite linear;
+  &.is-hidden {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(-360deg);
+  }
+}

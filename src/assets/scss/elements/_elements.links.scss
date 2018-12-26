@@ -1,0 +1,9 @@
+a {
+  color: inherit;
+  transition: $transition;
+  &:hover,
+  &:focus {
+  	color: color('brand');
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-slide-next--white', viewbox: '0 0 46 21', class: 'c-slide-next__svg'}, true %}

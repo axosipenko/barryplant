@@ -1,0 +1,28 @@
+html {
+  overflow-y: visible;
+  height: 100%;
+
+	font-family: $font;
+  color: color('content');
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  
+  // incase of long emails and words on small devices
+  word-wrap: break-word;
+}
+
+body {
+  position: relative;
+  top: 0px;
+
+  min-height: 100%;
+}
+
+html, body {
+	&.is-fixed {
+		overflow: hidden;
+	}
+}

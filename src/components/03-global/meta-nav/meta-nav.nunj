@@ -1,0 +1,10 @@
+<ul class="c-meta-nav">
+  <li class="c-meta-nav__item">
+    <a href="javascript:void(0);" class="c-meta-nav__link">
+      {% render '@svg-icon-search'%}
+    </a>
+  </li>
+  <li class="c-meta-nav__item">
+      {% render '@hamburger'%}
+  </li>
+</ul>

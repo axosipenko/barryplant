@@ -1,0 +1,132 @@
+.c-property-content {
+  margin-bottom: 24px;
+  &__sidebar {
+    margin-bottom: $unit-huge;
+    font-family: $sans-serif;
+    @include mq(tablet) {
+      margin-bottom: $unit-large;
+    }
+    @include font-size(size('t'), 1.4);
+    @include mq(desktop) {
+      @include font-size(size('s'), 1.4);
+    }
+    h2 {
+      margin-bottom: 0;
+      font-family: $font;
+      color: color('invalid');
+      small {
+        @include font-size(size('t'), 1.4);
+        font-family: $sans-serif;
+        color: color('content');
+        font-weight: normal;
+        @include mq(desktop) {
+          @include font-size(size('s'), 1.4);
+        }
+      }
+    }
+    
+    h3 {
+      margin-bottom: $unit/3;
+      font-family: $font;
+      @include font-size(size('b'));
+    }
+    &_enquire {
+      a {
+        padding-bottom: 4px;
+        color: color('brand');
+        text-decoration: none;
+        @extend %hover-underline;
+        &::before {
+          background: color('brand');
+        }
+      }
+    }
+    &_bottom {
+      @include clearfix();
+      svg, a {
+        vertical-align: middle;
+      }
+      svg {
+        margin-right: 6px;
+      }
+      .c-property-content__icon-link-container {
+        @include mq(largepalm) {
+          width: 50%;
+          padding-right: $unit;
+          float: left;
+        }
+        @include mq(tablet) {
+          width: auto;
+          float: none;
+          padding-right: 0;
+        }
+        @include mq(desktop) {
+          @include font-size(size('base'), 1);
+        }
+      }
+      .c-property-content__icon-link {
+        @include font-size(size('t'), 1);
+        display: inline-block;
+        margin-bottom: $unit-small;
+        text-decoration: none;
+        padding-bottom: 4px;
+        margin-left: 22px;
+        @extend %hover-underline;
+        &::before {
+          background: color('content');
+        }
+        @include attention() {
+          color: color('content');
+        }
+        @include mq(desktop) {
+          padding-bottom: 0;
+          margin-left: 34px;
+          @include font-size(size('s'), 1);
+        }
+        .c-svgicon {
+          margin-left: -22px;
+          @include mq(desktop) {
+            margin-left: -34px;
+          }
+        }
+        
+      }
+    }
+  }
+  &__auction-date {
+    margin-bottom: $unit;
+  }
+  &__inspect-dates {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+  }
+  &__inspect-date {
+    margin-bottom: 3px;
+  }
+  &__key-features {
+    @include clearfix();
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+  }
+  &__key-feature {
+    margin-bottom: 6px;
+    @include mq(palm) {
+      width: 50%;
+      float: left;
+      padding-right: $unit;
+    }
+    @include mq(tablet) {
+      width: 100%;
+      float: none;
+      padding-right: 0;
+    }
+  }
+  &__description {
+
+    @include mq(tablet) {
+      width: 90%;
+    }
+  }
+}

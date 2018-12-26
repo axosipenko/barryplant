@@ -1,0 +1,31 @@
+<div class="c-property-stage">
+  <div class="c-property-stage__interaction">
+    <div class="c-property-stage__interaction_left">
+      <a href="#">< Back</a>
+    </div>
+    <div class="c-property-stage__interaction_right">
+      <a href="javascript:void(0)">Add to Wishlist{% render '@svg-icon-favourite-alt' %}</a>
+      <a href="javascript:void(0)">Print{% render '@svg-icon-print' %}</a>
+      <a href="javascript:void(0)">Share{% render '@svg-icon-share' %}</a>
+    </div>
+  </div>
+  <div class="c-property-stage__slider">
+    <div class="c-property-stage__slider_nav">
+      <a href="javascript:void(0);" class="c-property-stage__slider_navleft">{% render '@svg-icon-left-arrow' %}</a>
+      <a href="javascript:void(0);" class="c-property-stage__slider_navright">{% render '@svg-icon-right-arrow' %}</a>
+      <a href="javascript:void(0);" class="c-property-stage__slider_expand">{% render '@svg-icon-expand' %}</a>
+    </div>
+  </div>
+  <div class="c-property-stage__bottom">
+    <div class="c-property-stage__bottom_left">
+      <a href="#">< Back to Search Results</a>
+    </div>
+    <div class="c-property-stage__bottom_right">
+      <a href="#" class="is-active">Photos</a>
+      <a href="#">Floorplan</a>
+      <a href="#">Siteplan</a>
+      <a href="#">Video</a>
+      <a href="#">Virtual Tour</a>
+    </div>
+  </div>
+</div>

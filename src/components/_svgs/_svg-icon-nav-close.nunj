@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-nav-close', viewbox: '0 0 29 25', class: ''}, true %}

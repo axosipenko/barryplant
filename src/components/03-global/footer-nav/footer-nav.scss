@@ -1,0 +1,36 @@
+.c-footer-nav {
+  margin: 0;
+  list-style: none;
+  &__item {
+    display: inline-block;
+    font-size: 0;
+  }
+  &__link {
+    @include font-size(size('xt'));
+    display: inline-block;
+    margin-right: $unit-small;
+
+    @include mq(tablet) {
+      margin-right: $unit-small;
+    }
+    @include mq(desktop) {
+      margin-right: $unit-medium;
+    }
+    margin-bottom: $unit-small;
+    font-family: $sans-serif;
+    font-weight: $sans-serif-light;
+    text-decoration: none;
+    color: color('white');
+    @extend %hover-underline;
+    @include attention() {
+      color: color('aliceblue');
+    }
+    @include mq(tablet) {
+      @include font-size(size('t'));
+
+    }
+    &:before {
+      background-color: color('aliceblue');
+    }
+  }
+}

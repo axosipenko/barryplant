@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-facebook', viewbox: '0 0 14 26', class: ''}, true %}

@@ -1,0 +1,144 @@
+.c-agent-details {
+  margin: 0 0 36px;
+  &__back {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-family: "Shapiro-35FeatherText";
+    text-decoration: none;
+    @include font-size(size('s'), 1.2);
+    color: shade(color('content'), 20%);
+    @include attention() {
+      color: color('brand');
+    }
+    @include mq(largepalm) {
+      margin-bottom: 24px;
+    }
+  }
+  &__content {
+    position: relative;
+    padding-bottom: 48px;
+    margin-bottom: 24px;
+    @include mq(desktop) {
+      margin-bottom: 0;
+    }
+  }
+  &__name {
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+  &__title {
+    margin-bottom: 6px;
+    font-weight: 400;
+    @include mq(tablet) {
+      margin-bottom: 12px;
+      @include font-size(size('xl'), 1.2);
+    }
+  }
+  &__numbers,
+  &__links {
+    vertical-align: top;
+    @include mq(largepalm) {
+      display: inline-block;
+    }
+    @include mq(desktop) {
+      width: 100%;
+    }
+  }
+  &__devider {
+    vertical-align: top;
+    display: none;
+    @include mq(largepalm) {
+      display: inline-block;
+    }
+    @include mq(desktop) {
+      display: none;
+    }
+  }
+  &__numbers {
+    margin-bottom: 6px;
+    font-family: "Shapiro-35FeatherText";
+    @include mq(tablet) {
+      margin-bottom: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  &__links {
+    margin-bottom: 20px;
+    font-family: "Shapiro-35FeatherText";
+    @include mq(tablet) {
+      margin-bottom: 30px;
+    }
+    a {
+      text-decoration: none;
+      @extend %hover-underline;
+      &::before {
+        background: color('content');
+      }
+      @include attention() {
+        color: color('content');
+      }
+    }
+  }
+  &__social {
+    margin-left: 0;
+    margin-bottom: 12px;
+    @include mq(tablet) {
+      margin-bottom: 24px;
+    }
+    li {
+      display: inline-block;
+      margin-right: 24px;
+      margin-bottom: 12px;
+      @include mq(tablet) {
+        margin-right: 32px;
+      }
+      a {
+        color: color('brand');
+        svg {
+          vertical-align: middle;
+        }
+        @include attention() {
+          color: color('content');
+        }
+      }
+    }
+  }
+  &__address {
+    font-family: "Shapiro-35FeatherText";
+    margin-bottom: 24px;
+    @include mq(tablet) {
+      margin-bottom: 48px;
+    }
+  }
+  &__interation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: "Shapiro-35FeatherText";
+    @include font-size(size('s'), 1.2);
+    a {
+      text-decoration: none;
+      margin-right: 12px;
+      color: shade(color('content'), 20%);
+      @include attention() {
+        color: color('brand');
+      }
+      svg {
+        vertical-align: middle;
+        margin-left: 4px;
+      }
+    }
+  }
+  &__image-wrap {
+    margin-bottom: 24px;
+    @include mq(desktop) {
+      margin-bottom: 0;
+      order: 2;
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+}

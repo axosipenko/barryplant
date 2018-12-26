@@ -1,0 +1,37 @@
+<div class="c-listing-card">
+  <div class="c-listing-card__img-wrap">
+    <a class="c-listing-card__img-link" href="javascript:void(0);">
+      <img src="{{ staticImgPath + '/listing-card/listing-card-' + id + '.jpg' }}" alt="" class="c-listing-card__img">
+    </a>
+    <a class="c-listing-card__wishlist"
+      href="javascript:void(0);"
+      data-toggle="favourite-{{id}}">
+      {% render '@svg-icon-favourite' %}
+    </a>
+    <div class="c-listing-card__tags">
+      {% if new %}
+      <span class="c-listing-card__tag c-listing-card__tag--brand">New</span>
+      {% endif %}
+      {% if open %}
+      <span class="c-listing-card__tag">{{ open }}</span>
+      {% endif %}
+    </div>
+  </div>
+  <div class="c-listing-card__content">
+    <h3 class="c-listing-card__address">
+      <a href="javscript:void(0);" class="c-listing-card__address-link">{{ address }}</a>
+    </h3>
+    <div class="c-listing-card__features">
+      {% for feature in features %}
+      <div class="c-listing-card__feature">
+        <span class="c-listing-card__feature-label">{{ feature.label }}</span>
+        {% render '@svg-icon-' + feature.icon %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="c-listing-card__footer">
+      <div class="c-listing-card__price-guide">{{ priceGuide }}</div>
+      <div class="c-listing-card__sale-info">{{ saleInfo }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<ul
+  class="
+    c-nav
+    {% if modifier %}c-nav--{{ modifier }}{% endif %}
+  "
+>
+  {% for item in officeNavItems %}
+    <li class="c-nav__item">
+      <a href="{{ item.url }}" class="c-nav__link">{{ item.label }}</a>
+    </li>
+  {% endfor %}
+</ul>

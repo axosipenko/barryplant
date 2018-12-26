@@ -1,0 +1,73 @@
+.c-banner {
+	background-size: cover;
+	position: relative;
+	height: 564px;//100vh;
+	background-position: 83%;
+      @include mq(tablet) {
+        max-height: 658px;
+        background-position: 33%;
+      }	
+      @include mq(desktop) {
+        max-height: 751px;
+      }
+      
+      
+
+	
+	  &__position-center{
+		  position: absolute;
+		  top: 50%;
+		  transform: translateY(-50%);
+	  }
+
+	  &__position-bottom{
+		 position: absolute;
+		 bottom: 100px;
+	  }
+
+ 	  &__header{
+	   
+		   
+		h1 {
+			
+			
+		  @include font-size(size('xxh'), 48px);
+		 
+	      @include mq(tablet) {
+	        @include font-size(size('g'), 70px);
+	      }
+	      @include mq(desktop) {
+	       @include font-size(size('xxg'), 90px);
+	      }		 
+	      
+	     font-family: 'GellerText-Regular';
+		 text-align: left;
+		 letter-spacing: 2px;
+		 font-weight: 400;
+		 padding-bottom:80px;
+		  max-width: 100%;
+	      @include mq(tablet) {
+		       padding-bottom:10px;
+	        max-width: 75%;
+	      }
+	      @include mq(desktop) {
+	       max-width:1200px;
+	      }	
+		 
+		 
+		}     
+	  } 
+	
+	&__bottom-triangle {
+		background-color:#ffffff;
+		height:20px;
+		opacity:0.4;
+		position:absolute; 
+		bottom:0px; 
+		left:0px;
+	}
+
+	
+	
+	
+}

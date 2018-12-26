@@ -1,0 +1,14 @@
+<div class="c-pagination">
+  <div class="o-wrapper">
+    <div class="c-pagination__items">
+      <a href="#" class="c-pagination__prev">{% render '@svg-icon-slide-previous' %}</a>
+      <a href="#1" class="c-pagination__item">1</a>
+      <a href="#2" class="c-pagination__item">2</a>
+      <a href="#3" class="c-pagination__item">3</a>
+      <a href="#4" class="c-pagination__item">4</a>
+      <span class="c-pagination__item has-more"></span>
+      <a href="#8" class="c-pagination__item">8</a>
+      <a href="#" class="c-pagination__next">{% render '@svg-icon-slide-next' %}</a>
+    </div>
+  </div>
+</div>

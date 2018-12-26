@@ -1,0 +1,7 @@
+<div class="o-layout">
+  {% for i in range(0, 4) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box">Grid Item {{ i+1 }}, Size: 1/2</div>
+  </div>
+  {%- endfor %}
+</div>

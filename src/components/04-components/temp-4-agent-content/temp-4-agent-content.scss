@@ -1,0 +1,26 @@
+.c-agent-content {
+  margin: 24px 0;
+  p {
+    margin-bottom: 12px;
+  }
+  &__summary {
+    max-width: 410px;
+    margin-bottom: 28px;
+    @include font-size(size('b'));
+    @include mq(tablet) {
+      @include font-size(size('xl'));
+    }
+  }
+  &__information {
+    @include mq(tablet) {
+      @include font-size(size('l'));
+    }
+  }
+  &__awards {
+    list-style: none;
+    margin-left: 0;
+    @include mq(tablet) {
+      @include font-size(size('l'));
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-linkedin', viewbox: '0 0 25 25', class: ''}, true %}

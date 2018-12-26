@@ -1,0 +1,5 @@
+{% render '@header' %}
+{% render '@temp-2-property-stage' %}
+{% render '@temp-2-property-details' %}
+{% render '@temp-2-property-content' %}
+{% render '@footer' %}

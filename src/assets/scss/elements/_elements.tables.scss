@@ -1,0 +1,22 @@
+$table-border: color('brand');
+
+table {
+  min-width: 380px;
+}
+
+th,
+td {
+  padding: $unit-tiny;
+  vertical-align: top;
+}
+th {
+  text-align: left;
+  border-bottom: 2px solid $table-border;
+  tbody & {
+    // font-weight: normal;
+    border-bottom: 1px solid $table-border;
+  }
+}
+td {
+  border-bottom: 1px solid $table-border;
+}

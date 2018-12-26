@@ -1,0 +1,11 @@
+<div class="c-social-links c-social-links--{{modifier}}">
+  <a href="javascript:void(0);" class="c-social-link">
+    {% render '@svg', {name: 'icon-facebook', viewbox: '0 0 14 26', class: ''}, true %}
+  </a>
+  <a href="javascript:void(0);" class="c-social-link">
+    {% render '@svg', {name: 'icon-instagram', viewbox: '0 0 26 26', class: ''}, true %}
+  </a>
+  <a href="javascript:void(0);" class="c-social-link">
+    {% render '@svg', {name: 'icon-youtube', viewbox: '0 0 26 18', class: ''}, true %}
+  </a>
+</div>

@@ -1,0 +1,97 @@
+{# Macro for rending select elements#}
+{% macro htmlFormControlInput(dataSource, attrKey) %}
+  <label for="{{ attrKey }}" class="field-label c-form-control__label">{{ dataSource[attrKey].placeholder }}</label>
+
+    {% if( dataSource[attrKey].fieldType == 'lookup' ) %}
+      <select name="{{ attrKey }}" id="select__{{ attrKey }}" class="c-form-text c-form-text--{{dataSource[attrKey].key}}" data-placeholder="{{ dataSource[attrKey].placeholder }}" placeholder="{{ dataSource[attrKey].placeholder }}">
+      <option  value="" class="placeholder-option"></option>
+    {% else %}
+      <select name="{{ dataSource[attrKey].key }}" id="select__{{ attrKey }}" class="c-form-select" data-placeholder="{{ dataSource[attrKey].placeholder }}" placeholder="{{ dataSource[attrKey].placeholder }}">
+      <option value="" class="placeholder-option">{{ dataSource[attrKey].placeholder }}</option>
+      {% for option in dataSource[attrKey].options %}
+        <option value="{{ option.key }}" class="">{{ option.label }}</option>
+      {% endfor %}
+    {% endif %}
+  </select>
+{% endmacro %}
+
+{% macro htmlFormContainer(dataSource,attrKey,classes) %}
+  <div class="c-form-control c-form-control--inline-label c-form-control--type-{{dataSource[attrKey].fieldType}} o-layout__item {{ classes }} {% if dataSource[attrKey].fieldState %}{{ dataSource[attrKey].fieldState }}{% endif %}">
+      {{ htmlFormControlInput(dataSource,attrKey) }}
+      {% if dataSource[attrKey].stateMessage %}
+        <div class="c-form-control__validation-message">{{ dataSource[attrKey].stateMessage }}</div>
+      {%  endif %}
+  </div>
+
+{% endmacro %}
+
+
+<div class="c-advanced-search c-advanced-search--pointer-bottom o-wrapper">
+    <header class="c-advanced-search__header">
+      <h1>{{ title }}</h1>
+    </header>
+  <form action="" name="advanced_search">
+
+    <ul class="c-advanced-search__filters o-list-inline o-list-bare">
+      <li class="filter__label o-list-inline__item o-list-bare__item">{{ viewByfilterLabel }}</li>
+        {% for viewByfilter in formFields.viewByFilters.options %}
+            <li class="c-icon-btn c-icon-btn--{{ viewByfilter.key }} u-1/6@tablet u-1/6@desktop o-list-inline__item o-list-bare__item">
+                <a href="javascript:void(0)">
+                    {% render '@svg-icon-' + viewByfilter.icon %}
+                    <span class="filter__name">{{ viewByfilter.label }}</span>
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <div class="c-advanced-search__form-controls o-layout c-advanced-search__form-controls--selectized">
+        {#Form only mobile #}
+
+      {{ htmlFormContainer(formFields,'viewByFilters','c-form-control--hide-above-tablet u-1/2') }}
+
+      {{ htmlFormContainer(formFields,'listingType','u-1/2 u-4/12@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'searchRegion','c-form-control--icon-search u-2/2  u-8/12@tablet u-custom-grids--width-02@desktop') }}
+
+      {{ htmlFormContainer(formFields,'searchBounds',' u-1/1 u-1/3@tablet u-custom-grids--width-03@desktop') }}
+
+      {{ htmlFormContainer(formFields,'propertyClassification','  u-1/2 u-1/3@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'propertyType','  u-1/2 u-1/3@tablet u-custom-grids--width-04@desktop') }}
+
+      {{ htmlFormContainer(formFields,'minPrice','u-1/2 u-1/4@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'maxPrice','u-1/2 u-1/4@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'minBedrooms','u-1/2 u-1/4@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'minBathrooms','u-1/2 u-1/4@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'minCarParks','u-1/2 u-1/4@tablet  u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'minToilets','u-1/2 u-1/4@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'study',' u-1/2 u-1/4@tablet u-custom-grids--width-01@desktop') }}
+
+      {{ htmlFormContainer(formFields,'minLandSize','u-1/2 u-1/4@tablet u-custom-grids--width-04@desktop') }}
+
+      {{ htmlFormContainer(formFields,'keywords','c-form-control--icon-search u-2/2 u-1/1@tablet u-custom-grids--width-03@desktop') }}
+
+    </div>
+    <div class="c-advanced-search__form-actions o-layout  o-layout--middle">
+      <div class="o-layout__item u-1/3 form-action__save-search">
+        <label><input type="checkbox"> <span>{{ saveSearchLabel }}</span></label>
+      </div>
+      <div class="o-layout__item u-1/3 form-action__submit">
+        <button type="submit" role="button" class="c-btn c-btn--primary c-btn--animated c-btn--large" data-text="{{ searchBtnLabel }}"><span>{{ searchBtnLabel }}</span></button>
+      </div>
+      <div class="o-layout__item u-1/3 form-action__close">
+        <a id="close_search" href="javascript:void(0)" class="link-close">{{ closeBtnLabel }}</a>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

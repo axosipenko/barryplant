@@ -1,0 +1,75 @@
+<div class="c-mega-nav c-mega-nav--{{modifier}}">
+  <div class="o-wrapper">
+    <div class="c-mega-nav__tabs">
+      <a href="javascript: void(0);" class="c-mega-nav__tab is-active" data-toggle="office-menu">{{office}}</a>
+      <a href="javascript: void(0);" class="c-mega-nav__tab" data-toggle="main-menu">Main Menu</a>
+    </div>
+    <div class="c-mega-nav__container is-active c-mega-nav__container--{{modifier}}" data-toggle-content="office-menu">
+      <div class="c-mega-nav__nav">
+        {% render '@nav', officeHeaderNav %}
+      </div>
+      <ul class="c-mega-nav__items">
+        {% for item in navItems %}<li class="c-mega-nav__item">
+          <div class="u-hover-underline" data-hover-underline="hover-underline">
+            <a href="{{ item.url }}" class="c-mega-nav__link u-hover-underline__element">
+              {{ item.label }}
+            </a>
+          </div>
+          <a href="javascript:void(0);" class="c-mega-nav__sub-toggle" data-toggle="{{item.id}}">
+            {% render '@svg-icon-down-arrow' %}
+            {% render '@svg-icon-dash' %}
+          </a>
+          <ul class="c-mega-nav__sub-items" data-toggle-content="{{item.id}}">
+            {% for subItem in item.subNavItems %}<li class="c-mega-nav__sub-item">
+              <div class="u-hover-underline" data-hover-underline="hover-underline">
+                <a href="{{ subItem.url }}" class="c-mega-nav__sub-link u-hover-underline__element">
+                  {{ subItem.label }}
+                </a>
+              </div>
+            </li>{% endfor %}
+          </ul>
+        </li>{% endfor %}
+      </ul>
+      <div class="c-mega-nav__secondary-nav">
+        {% render '@secondary-nav' %}
+      </div>
+      <div class="c-mega-nav__social-links">
+        {% render '@social-links', {modifier: 'content'}, merge=true %}
+      </div>
+    </div>
+
+    <div class="c-mega-nav__container" data-toggle-content="main-menu">
+      <div class="c-mega-nav__nav">
+        {% render '@nav', headerNav %}
+      </div>
+      <ul class="c-mega-nav__items">
+        {% for item in navItems %}<li class="c-mega-nav__item">
+          <div class="u-hover-underline" data-hover-underline="hover-underline">
+            <a href="{{ item.url }}" class="c-mega-nav__link u-hover-underline__element">
+              {{ item.label }}
+            </a>
+          </div>
+          <a href="javascript:void(0);" class="c-mega-nav__sub-toggle" data-toggle="{{item.id}}">
+            {% render '@svg-icon-down-arrow' %}
+            {% render '@svg-icon-dash' %}
+          </a>
+          <ul class="c-mega-nav__sub-items" data-toggle-content="{{item.id}}">
+            {% for subItem in item.subNavItems %}<li class="c-mega-nav__sub-item">
+              <div class="u-hover-underline" data-hover-underline="hover-underline">
+                <a href="{{ subItem.url }}" class="c-mega-nav__sub-link u-hover-underline__element">
+                  {{ subItem.label }}
+                </a>
+              </div>
+            </li>{% endfor %}
+          </ul>
+        </li>{% endfor %}
+      </ul>
+      <div class="c-mega-nav__secondary-nav">
+        {% render '@secondary-nav' %}
+      </div>
+      <div class="c-mega-nav__social-links">
+        {% render '@social-links' %}
+      </div>
+    </div>
+  </div>
+</div>

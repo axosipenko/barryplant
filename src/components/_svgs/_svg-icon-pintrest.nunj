@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-pintrest', viewbox: '0 0 19 24', class: ''}, true %}

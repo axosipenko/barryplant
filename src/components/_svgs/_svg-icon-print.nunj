@@ -1,0 +1,1 @@
+{% render '@svg', {name: 'icon-print', viewbox: '0 0 25 26', class: ''}, true %}

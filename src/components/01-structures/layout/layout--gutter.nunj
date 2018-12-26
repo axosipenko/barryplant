@@ -1,0 +1,47 @@
+<div class="o-layout">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box"><code>o-layout</code></div>
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="o-layout o-layout--flush">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box"><code>o-layout o-layout--flush</code></div>
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="o-layout o-layout--tiny">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box"><code>o-layout o-layout--tiny</code></div>
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="o-layout o-layout--small">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box"><code>o-layout o-layout--small</code></div>
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="o-layout o-layout--large">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box"><code>o-layout o-layout--large</code></div>
+  </div>
+  {%- endfor %}
+</div>
+
+<div class="o-layout o-layout--huge">
+  {% for i in range(0, 2) -%}
+  <div class="o-layout__item u-1/2 o-island">
+    <div class="o-box"><code>o-layout o-layout--huge</code></div>
+  </div>
+  {%- endfor %}
+</div>
